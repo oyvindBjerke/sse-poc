@@ -13,7 +13,7 @@ class EventController(private val eventService: EventService) {
     fun getEvents(
         @RequestHeader(
             name = "Last-Event-Id",
-            required = true
+            required = false
         ) lastEventId: String?
     ): Flux<ServerSentEvent<String>> {
         return eventService.streamFrom(lastEventId)
