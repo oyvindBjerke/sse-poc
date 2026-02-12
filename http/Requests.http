@@ -1,0 +1,22 @@
+### Subscribe to events
+GET http://localhost:8080/events
+
+###
+
+
+### POST event
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "event": "my-event",
+  "data": "Randomly generated UUID: {{$uuid}}"
+}
+
+###
+
+### Subscribe to events from given lastEventId
+GET http://localhost:8080/events
+Last-Event-Id: 84e31a99-b3cc-41df-ba43-685db8bd007c
+
+###
